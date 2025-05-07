@@ -66,6 +66,9 @@ We investigated tuning the hyperparameters of the U-net varying the depth, numbe
 Evaluation of the segmentation performance was also a key aspect of the challenge and we discussed using more appropriate segmentation performance metrics for filamentous structures, such as the centerline dice score. A good resource to discover and evaluate suitable performance metrics is [metrics reloaded](https://metrics-reloaded.dkfz.de/).
 
 
+## Conclusion
+
+This project mostly focused on consulting and providing image analysis support. We advised on the gathering of additional data and suitable generation of ground truth annotations, additoinally we helped to set up a pipeline based on DeePict to train and test a supervised U-net based model to perform segmentation and advised on further hyperparmeter tuning. As it currently stands a large and diverse training set of real tomograms has been obtained along with simulated data, a pipeline for semi-automated groundtruth annotation set up and a pipleline for supervised segmentation setup and tested. Actin filaments in cryo-ET tomograms remain a challenging segmentation task, but a strong basis for future work has been established.
 
 
 
