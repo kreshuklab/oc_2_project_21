@@ -22,17 +22,11 @@ The first stage of the project was ground truth label generation, this presented
 
 The images below compare the labels generated using Amira and Dragonfly software. 
 
-<div style="display: flex; justify-content: center; gap: 5%; flex-wrap: wrap;">
+<div style="display: flex; justify-content: space-between;">
 
-<div style="text-align: center; flex: 1;">
-    <h4>Amira Labels</h4>
-    <img src="./ims/amira_labels.png" style="max-width: 45%; display: block; margin: auto;" alt="Amira Labels"/>
-</div>
+<img src="./ims/amira_labels.png" style="width: 45%;" alt="Amira Labels"/>
 
-<div style="text-align: center; flex: 1;">
-    <h4>Dragonfly Labels</h4>
-    <img src="./ims/dragonfly_labels.png" style="max-width: 45%; display: block; margin: auto;" alt="Dragonfly Labels"/>
-</div>
+<img src="./ims/dragonfly_labels.png" style="width: 45%;" alt="Dragonfly Labels"/>
 
 </div>
 
