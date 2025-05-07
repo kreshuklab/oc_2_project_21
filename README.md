@@ -18,17 +18,20 @@ The below example shows a cropped tomogram with actin filaments labelled in brow
 
 The first stage of the project was ground truth label generation, this presented a challenge as the manual annotation of a large number of tomograms is prohibitively time consuming. We therefore opted for a semi automated label generation process using the cylinder and trace correlation functionalities in the Amira software to generate initial labels, which could then be manually cleaned to remove spuriously labelled objects such as tomogram edges, membranes or microtubules. While much faster than purely manual annotation, the process is still time consuming hence the need for a fully automated Actin segmentation model. The Quality of the ground truth was also discussed during the project, for while the semi automated label generation was more time efficient, it potentially led to some misleading and incorrect pixel annotations. We therefore investigated if any substantial differences in performance were observed when using fully manually annotated ground truth. This was done by manually annotating a small subset of sub tomograms and then comparing the predictions of models trained using the manual annotations and  the semi automated annotations. We also investigated further processing the cleaned Amira annotation, by finding the intersection between an otsu thresholded image and the amira annotation.
 
+### Comparison of Label Generation Methods
 
-<div style="display: flex; justify-content: center;">
+The images below compare the labels generated using Amira and Dragonfly software. 
 
-<div style="text-align: center; width: 45%; margin: 0 2.5%;">
-    <p><strong>Amira Labels</strong></p>
-    <img src="./ims/amira_labels.png" style="width: 100%;" alt="Amira Labels"/>
+<div style="display: flex; justify-content: center; gap: 5%;">
+
+<div style="text-align: center;">
+    <h4>Amira Labels</h4>
+    <img src="./ims/amira_labels.png" style="width: 45%; display: block; margin: auto;" alt="Amira Labels"/>
 </div>
 
-<div style="text-align: center; width: 45%; margin: 0 2.5%;">
-    <p><strong>Manual Labels (Dragonfly)</strong></p>
-    <img src="./ims/dragonfly_labels.png" style="width: 100%;" alt="Dragonfly Labels"/>
+<div style="text-align: center;">
+    <h4>Dragonfly Labels</h4>
+    <img src="./ims/dragonfly_labels.png" style="width: 45%; display: block; margin: auto;" alt="Dragonfly Labels"/>
 </div>
 
 </div>
