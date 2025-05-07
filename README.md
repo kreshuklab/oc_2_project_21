@@ -26,14 +26,22 @@ The images below compare the labels generated using the semi-automated Amira ann
 
 <div style="display: flex; justify-content: center;">
 
-<img src="./ims/actin_labels.svg" style="width: 75%; display: block; margin: auto;" alt="Tomogram Example"/>
+<img src="./ims/actin_labels.svg" style="width: 100%; display: block; margin: auto;" alt="Tomogram Example"/>
 
 </div>
 
-The Quality of the ground truth was also discussed during the project, for while the semi automated label generation was more time efficient, it potentially led to some misleading and incorrect pixel annotations. We therefore investigated if any substantial differences in performance were observed when using fully manually annotated ground truth. This was done by manually annotating a small subset of sub tomograms and then comparing the predictions of models trained using the manual annotations and  the semi automated annotations. We also investigated 
+The amira labels and the manual dragonfly labels produced similar groundtruth as highlilghted in the example cropped tomograms above, however,in general the amira pipeline has a tendency to over annotate realtive to the manual annotations. The Quality of the ground truth was also discussed during the project, for while the semi automated label generation was more time efficient, it potentially led to some misleading and incorrect pixel annotations. We therefore investigated if any substantial differences in performance were observed when using fully manually annotated ground truth. This was done by manually annotating a small subset of sub tomograms and then comparing the predictions of a model trained using the manual annotations with a model trained using the semi automated annotations. We did not observe any major difference betweent he performance of the models, however due to the prohibitively slow process of manual annotation we could not train the models on many tomograms. Another approach being investigated is to rely on simulated data, where accurate groundtruth is inherently available, this would allow a larger set of data to be considered for the comparison as only the faster semi-automated amira labelling is required to be produced.
 
 
+## Models
 
+For all the Actin segmentation predictions so far the project has been relying upon training a supervised 3D U-net, using the [DeePiCt](https://github.com/ZauggGroup/DeePiCt) repository to provide the architecture and training framework.
+
+<div style="display: flex; justify-content: center;">
+
+<img src="./ims/Deepict.svg" style="width: 100%; display: block; margin: auto;" alt="DeePict Unet"/>
+
+</div>
 
 
 
