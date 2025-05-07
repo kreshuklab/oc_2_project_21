@@ -4,9 +4,13 @@
 
 The goal of the project was to segment actin filaments in cryo-ET tomograms, building a model that can generalise to future tomograms to produce quality segmentations. This project presents a significant challenge both in terms of the segmentation task and data acquisition. The filamentous structure of actin, along with the technical challenges of working with cryo-ET tomograms, such as, low SNR and distortions caused by the missing wedge effect and tomogram reconstruction errors, make the segmentation task particulary challenging. Data acquisition is also technically difficult and time consuming, however, in order to generalise across tomograms many examples are required. Another difficulty arises from ground truth generation which is also difficult and time consuming.Taking into consideration all the aforementioned challenges and their time scales this project took shape as a series of consultations. Below is a description of the insights gained and the steps taken to progress towards a cryo-ET actin segmentation model.
 
-## Example Tomogram
+## Data
 
-The below example shows a cropped tomogram with actin filaments labelled in brown.
+In large part the ability of a model to generalise to new unseen data is dependent on the variability and distribution of data observed during training. Over the course of the project a large time investment has been put into obtaining and annotating (semi-automated, more detail below) more tomograms bringing the total to 83 tomograms binned by 4 – pixel size of 13.48 Å and filtered by [spectrum matching](https://github.com/ZauggGroup/DeePiCt/tree/main/spectrum_filter).
+
+### Example Tomogram
+
+The below example shows a cropped tomogram with actin filaments annotated in brown.
 
 <div style="display: flex; justify-content: center;">
 
@@ -14,10 +18,20 @@ The below example shows a cropped tomogram with actin filaments labelled in brow
 
 </div>
 
+
+### Simulated Tomogram
+
+We also discussed utalising simulated data and obtained 400 simulated tomograms. Further investigation is required to determine the practical advantages of using such simulations as additional training data, but we beilive they at least provide a useful rescourse to investigate ground truth generation as discussed in the next section. The below example shws one such simulated tomogram with annotated actin filaments.
+
+<div style="display: flex; justify-content: center;">
+
+<img src="./ims/simulated_tomogram.png" style="width: 50%; display: block; margin: auto;" alt="simulated tomogram"/>
+
+</div>
+
 ## Ground truth generation
 
-The first stage of the project was ground truth label generation, this presented a challenge as the manual annotation of a large number of tomograms is prohibitively time consuming. We therefore opted for a semi-automated label generation process using the cylinder and trace correlation functionalities in the Amira software to generate initial labels, which could then be manually cleaned to remove spuriously labelled objects such as tomogram edges, membranes or microtubules. While much faster than purely manual annotation, the process is still time consuming hence the need for a fully automated Actin segmentation model. 
-Another drawback to the Amira annotation pipeline is that it relies upon fitting cylinder objects to the filamentous structures in a tomogram, however due to the low SNR, reconstruction errors and the orientation of the actin in the tomogram this can lead to a mismatch between the signal observed in the tomogram and what is being annotated as actin. In order to try and reduce the number of false positive labels we investigated further processing the cleaned Amira annotation, by finding the intersection between an otsu thresholded image and the amira annotation.
+The first stage of the project was ground truth label generation, this presented a challenge as the manual annotation of a large number of tomograms is prohibitively time consuming. We therefore opted for a semi-automated label generation process using the cylinder and trace correlation functionalities in the Amira software to generate initial labels, which could then be manually cleaned to remove spuriously labelled objects such as tomogram edges, membranes or microtubules. While much faster than purely manual annotation, the process is still time consuming hence the need for a fully automated Actin segmentation model. Another drawback to the Amira annotation pipeline is that it relies upon fitting cylinder objects to the filamentous structures in a tomogram, however due to the low SNR, reconstruction errors and the orientation of the actin in the tomogram this can lead to a mismatch between the signal observed in the tomogram and what is being annotated as actin. In order to try and reduce the number of false positive labels we investigated further processing the cleaned Amira annotation, by finding the intersection between an otsu thresholded image and the amira annotation.
 
 
 ### Comparison of Label Generation Methods
@@ -42,6 +56,14 @@ For all the Actin segmentation predictions so far the project has been relying u
 <img src="./ims/Deepict.svg" style="width: 100%; display: block; margin: auto;" alt="DeePict Unet"/>
 
 </div>
+
+## Model Hyperparameters
+
+We investigated tuning the hyperparameters of the U-net varying the depth, number of initial features, learning rate and augmentations applied during training. All these experiments were carried out by training on a set of 28 tomograms and testing on a held out test tomogram. 
+
+
+### Evaluation metric
+Evaluation of the segmentation performance was also a key aspect of the challenge and we discussed using more appropriate segmentation performance metrics for filamentous structures, such as the centerline dice score. A good resource to discover and evaluate suitable performance metrics is [metrics reloaded](https://metrics-reloaded.dkfz.de/).
 
 
 
