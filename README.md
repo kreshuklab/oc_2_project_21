@@ -20,9 +20,15 @@ The first stage of the project was ground truth label generation, this presented
 
 <div style="display: flex; justify-content: center;">
 
-<img src="./ims/amira_labels.png" style="width: 45%; margin: 0 2.5%;" alt="Amira Labels"/>
+<div style="text-align: center; width: 45%; margin: 0 2.5%;">
+    <p><strong>Amira Labels</strong></p>
+    <img src="./ims/amira_labels.png" style="width: 100%;" alt="Amira Labels"/>
+</div>
 
-<img src="./ims/dragonfly_labels.png" style="width: 45%; margin: 0 2.5%;" alt="Dragonfly Labels"/>
+<div style="text-align: center; width: 45%; margin: 0 2.5%;">
+    <p><strong>Manual Labels (Dragonfly)</strong></p>
+    <img src="./ims/dragonfly_labels.png" style="width: 100%;" alt="Dragonfly Labels"/>
+</div>
 
 </div>
 
