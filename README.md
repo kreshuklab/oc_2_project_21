@@ -24,9 +24,15 @@ The images below compare the labels generated using Amira and Dragonfly software
 
 <div style="display: flex; justify-content: space-between;">
 
-<img src="./ims/amira_labels.png" style="width: 45%;" alt="Amira Labels"/>
+<div style="text-align: center; width: 45%;">
+<img src="./ims/amira_labels.png" style="width: 100%;" alt="Amira Labels"/>
+<p><strong>Amira Labels</strong></p>
+</div>
 
-<img src="./ims/dragonfly_labels.png" style="width: 45%;" alt="Dragonfly Labels"/>
+<div style="text-align: center; width: 45%;">
+<img src="./ims/dragonfly_labels.png" style="width: 100%;" alt="Dragonfly Labels"/>
+<p><strong>Dragonfly Labels</strong></p>
+</div>
 
 </div>
 
