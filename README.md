@@ -22,6 +22,12 @@ The first stage of the project was ground truth label generation, this presented
 
 The images below compare the labels generated using Amira and Dragonfly software. 
 
+<div style="display: flex; justify-content: center;">
+
+<img src="./ims/actin_labels.svg" style="width: 50%; display: block; margin: auto;" alt="Tomogram Example"/>
+
+</div>
+
 <div style="display: flex; justify-content: space-between;">
 
 <img src="./ims/amira_labels.png" style="width: 45%;" alt="Amira Labels" title="Amira Labels/>
