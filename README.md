@@ -63,13 +63,21 @@ We investigated tuning the hyperparameters of the U-net varying the depth, numbe
 
 
 ### Evaluation metric
-Evaluation of the segmentation performance was also a key aspect of the challenge and we discussed using more appropriate segmentation performance metrics for filamentous structures, such as the centerline dice score. A good resource to discover and evaluate suitable performance metrics is [metrics reloaded](https://metrics-reloaded.dkfz.de/).
+Evaluation of the segmentation performance was also a key aspect of the challenge and we discussed using more appropriate segmentation performance metrics for filamentous structures, such as the [centerline dice score](https://openaccess.thecvf.com/content/CVPR2021/html/Shit_clDice_-_A_Novel_Topology-Preserving_Loss_Function_for_Tubular_Structure_CVPR_2021_paper.html). A good resource to discover and evaluate suitable performance metrics is [metrics reloaded](https://metrics-reloaded.dkfz.de/).
 
 
 ## Conclusion
 
 This project mostly focused on consulting and providing image analysis support. We advised on the gathering of additional data and suitable generation of ground truth annotations, additoinally we helped to set up a pipeline based on DeePict to train and test a supervised U-net based model to perform segmentation and advised on further hyperparmeter tuning. As it currently stands a large and diverse training set of real tomograms has been obtained along with simulated data, a pipeline for semi-automated groundtruth annotation set up and a pipleline for supervised segmentation setup and tested. Actin filaments in cryo-ET tomograms remain a challenging segmentation task, but a strong basis for future work has been established.
 
+
+## Bibliography
+
+- de Teresa-Trueba, I., Goetz, S.K., Mattausch, A. et al. Convolutional networks for supervised mining of molecular patterns within cellular context. Nat Methods 20, 284–294 (2023). https://doi.org/10.1038/s41592-022-01746-2
+
+- S. Shit et al., "clDice - a Novel Topology-Preserving Loss Function for Tubular Structure Segmentation," 2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Nashville, TN, USA, 2021, pp. 16555-16564, doi: 10.1109/CVPR46437.2021.01629.
+
+- Reinke, A., Tizabi, M.D., Baumgartner, M. et al. Understanding metric-related pitfalls in image analysis validation. Nat Methods 21, 182–194 (2024). https://doi.org/10.1038/s41592-023-02150-0
 
 
 
