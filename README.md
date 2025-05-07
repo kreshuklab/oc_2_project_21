@@ -35,7 +35,7 @@ The amira labels and the manual dragonfly labels produced similar groundtruth as
 
 ## Models
 
-For all the Actin segmentation predictions so far the project has been relying upon training a supervised 3D U-net, using the [DeePiCt](https://github.com/ZauggGroup/DeePiCt) repository to provide the architecture and training framework.
+For all the Actin segmentation predictions so far the project has been relying upon training a supervised 3D U-net, using the [DeePiCt](https://github.com/ZauggGroup/DeePiCt) repository to provide the architecture and training framework. DeePict provides a convinient and simple to use implementation of the U-net architecture that is controlled via config files, allowing project collaborator to define and train their own U-net models. An example of one such config file is shown in this repo.
 
 <div style="display: flex; justify-content: center;">
 
