@@ -14,10 +14,14 @@ The below example shows a cropped tomogram with actin filaments labelled in brow
 
 The first stage of the project was ground truth label generation, this presented a challenge as the manual annotation of a large number of tomograms is prohibitively time consuming. We therefore opted for a semi automated label generation process using the cylinder and trace correlation functionalities in the Amira software to generate initial labels, which could then be manually cleaned to remove spuriously labelled objects such as tomogram edges, membranes or microtubules. While much faster than purely manual annotation, the process is still time consuming hence the need for a fully automated Actin segmentation model. The Quality of the ground truth was also discussed during the project, for while the semi automated label generation was more time efficient, it potentially led to some misleading and incorrect pixel annotations. We therefore investigated if any substantial differences in performance were observed when using fully manually annotated ground truth. This was done by manually annotating a small subset of sub tomograms and then comparing the predictions of models trained using the manual annotations and  the semi automated annotations. We also investigated further processing the cleaned Amira annotation, by finding the intersection between an otsu thresholded image and the amira annotation.
 
-<p float="left">
-  <img src="./imgs/amira_labels.png" width="45%" />
-  <img src="/imgs/dragomfly_labels.png" width="45%" /> 
-</p>
+<div style="display: flex; justify-content: center; gap: 10%;">
+
+<img src="./imgs/amira_labels.png" style="width: 45%; display: block; margin: auto;" alt="Amira Labels"/>
+
+<img src="./imgs/dragonfly_labels.png" style="width: 45%; display: block; margin: auto;" alt="Dragonfly Labels"/>
+
+</div>
+
 
 
 
